@@ -138,7 +138,7 @@ export const Contact = () => {
           <div className="w-20 h-1 bg-neon-cyan mx-auto"></div>
         </div>
 
-        <div className="contact-grid grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="contact-grid grid grid-cols-1 md:grid-cols-2 g:grid-cols-1 gap-16">
           {/* <div className="contact-card p-10 glass rounded-3xl border border-white/5 relative overflow-hidden group">
             <div className="absolute -top-24 -left-24 w-48 h-48 bg-neon-cyan/10 blur-[100px] rounded-full group-hover:bg-neon-cyan/20 transition-all pointer-events-none"></div>
             
@@ -195,20 +195,18 @@ export const Contact = () => {
                 {t.contact.collabText}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+              <div className="grid grid-cols-2 gap-6 mb-12">
                 {socials.map((social, idx) => {
                   const Icon = (LucideIcons as any)[social.icon] || LucideIcons.HelpCircle;
                   return (
                     <a
                       key={idx}
                       href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="social-item group p-6 glass rounded-2xl border border-white/5 hover:border-neon-pink hover:shadow-neon-pink transition-all duration-500 interactive"
                     >
                       <Icon className="text-text-muted group-hover:text-neon-pink transition-colors mb-4" size={32} />
                       <div className="text-xs font-bold uppercase tracking-widest text-text-muted group-hover:text-white">{social.platform}</div>
-                      <div className="text-xs text-text-muted truncate mt-1">{social.handle}</div>
+                      <div className="text-xs text-text-muted truncate mt-1">@gonzalez.aquino</div>
                     </a>
                   );
                 })}

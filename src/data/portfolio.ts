@@ -307,5 +307,5 @@ export const portfolioData: { [key: string]: Translation } = {
 export const socials = [
   { platform: "GitHub", url: "https://github.com/Mariog108", handle: "Mariog108", icon: "Code" },
   { platform: "LinkedIn", url: "https://www.linkedin.com/in/Mariog108", handle: "Mariog108", icon: "Handshake" },
-  { platform: "Email", url: "mailto:mariogonzalezaquino@gmail.com", handle: "mariogonzalezaquino@gmail.com", icon: "Mail" },
+  { platform: "Email", url: "mailto:mariogonzalezaquino+mario-g@gmail.com", handle: "mariogonzalezaquino@gmail.com", icon: "Mail" },
 ];
