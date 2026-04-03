@@ -16,20 +16,29 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "Mario G. | Next.js Expert & UI Designer",
-  description: "Modern dark neon portfolio of Mario G., a professional Next.js developer and UI/UX enthusiast.",
-  metadataBase: new URL("https://mario-g-portfolio.vercel.app"),
+  title: "Mario G. | Expert Developer",
+  description: "Modern dark neon portfolio of Mario G., a professional .NET, Next.js, UI/UX design.",
+  metadataBase: new URL("https://mario-g.com"),
+  icons: {
+    icon: "/m-logo.png",
+    shortcut: "/m-logo.png",
+    apple: "/m-logo.png",
+    other: {
+      rel: "icon",
+      url: "/m-logo.png",
+    },
+  },
   openGraph: {
-    title: "Mario G. | Dark Neon Portfolio",
+    title: "Mario G. | Expert Developer",
     description: "Custom GSAP animations and Tailwind v4 design.",
     type: "website",
-    images: ["/og-image.png"],
+    images: ["/m-logo.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mario G. | Dark Neon Portfolio",
+    title: "Mario G. | Expert Developer",
     description: "Built with Next.js and GSAP.",
-    images: ["/og-image.png"],
+    images: ["/m-logo.png"],
   },
 };
 

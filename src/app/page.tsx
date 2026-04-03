@@ -45,7 +45,7 @@ export default function Home() {
       <Skills />
       <Projects />
 
-      {/* Testimonials */}
+      {/* Testimonials
       <section className="py-24 bg-dark-bg/50 border-y border-white/5 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-neon-purple/5 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="container mx-auto px-6">
@@ -79,7 +79,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Contact />
     </>

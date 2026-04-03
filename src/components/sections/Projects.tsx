@@ -12,7 +12,7 @@ export const Projects = () => {
   const containerRef = useRef<HTMLElement>(null);
   const { t, language } = useLanguage();
 
-  const projects = t.projects;
+  const projects = [...t.projects].sort((a: any, b: any) => parseInt(b.year) - parseInt(a.year));
   const categories = language === 'es-DO' ? ["All", "Web", "Mobile App"] : ["All", "Web", "Mobile App"];
 
   const filteredProjects = filter === "All"
@@ -83,7 +83,7 @@ export const Projects = () => {
               key={idx}
               className="project-card group relative aspect-video rounded-3xl overflow-hidden glass border-white/5 hover:border-pink-500 transition-all duration-500 interactive"
             >
-              <div className="absolute inset-0 z-0">
+              <div className="absolute inset-0 z-0 group-hover:blur-sm">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -93,18 +93,12 @@ export const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
               </div>
 
+              <div className="absolute top-6 right-6 z-20 px-4 py-1.5 bg-dark-bg/40 backdrop-blur-md border border-white/10 rounded-full text-[10px] font-heading font-black text-white/70 uppercase tracking-widest shadow-lg">
+                {project.year}
+              </div>
+
               <div className="relative h-full flex flex-col justify-end p-8 z-10">
-                <div className="transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 flex flex-col gap-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag: string, tIdx: number) => (
-                      <span
-                        key={tIdx}
-                        className="px-3 py-1 bg-neon-pink/20 text-neon-pink border border-neon-pink/30 rounded-full text-[10px] font-bold uppercase tracking-widest font-heading shadow-neon-pink"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <div className="transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 flex flex-col gap-4 ">
 
                   <h3 className="text-3xl font-heading font-black text-white group-hover:neon-text-pink transition-all">
                     {project.title}
@@ -114,26 +108,42 @@ export const Projects = () => {
                     {project.description}
                   </p>
 
-                  <div className="flex gap-6 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      className="text-text-primary hover:neon-text-cyan transition-all interactive flex items-center gap-2 group/link"
-                    >
-                      <GitHub size={20} />
-                      <span className="text-xs font-bold uppercase tracking-widest group-hover/link:underline">Code</span>
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      className="text-text-primary hover:neon-text-cyan transition-all interactive flex items-center gap-2 group/link"
-                    >
-                      <ExternalLink size={20} />
-                      <span className="text-xs font-bold uppercase tracking-widest group-hover/link:underline">Live Demo</span>
-                    </a>
+                  <div className="flex gap-6 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+                    {project.github !== "#" && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        className="text-text-primary hover:neon-text-cyan transition-all interactive flex items-center gap-2 group/link"
+                      >
+                        <GitHub size={20} />
+                        <span className="text-xs font-bold uppercase tracking-widest group-hover/link:underline">Code</span>
+                      </a>
+                    )}
+                    {project.demo !== "#" && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        className="text-text-primary hover:neon-text-cyan transition-all interactive flex items-center gap-2 group/link"
+                      >
+                        <ExternalLink size={20} />
+                        <span className="text-xs font-bold uppercase tracking-widest group-hover/link:underline">Live Demo</span>
+                      </a>
+                    )}
                   </div>
+
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag: string, tIdx: number) => (
+                    <span
+                      key={tIdx}
+                      className="px-2 py-1 bg-neon-pink/20 text-neon-pink border border-neon-pink/30 rounded-full text-[10px] font-bold uppercase tracking-widest font-heading shadow-neon-pink"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
+
 
               <div className="absolute inset-0 bg-neon-pink/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
             </div>

@@ -58,7 +58,7 @@ export const Footer = () => {
             &copy; {currentYear} {t.name}. {t.footer.allRights}
           </div>
           <div className="text-xs text-text-muted font-medium flex items-center gap-2">
-            {t.footer.madeWith} <span className="neon-text-pink">&lt;3</span> and <span className="text-white hover:neon-text-cyan transition-colors cursor-pointer">React</span>
+            {t.footer.madeWith}  <span className="text-white hover:neon-text-cyan transition-colors cursor-pointer">React</span>
           </div>
         </div>
       </div>

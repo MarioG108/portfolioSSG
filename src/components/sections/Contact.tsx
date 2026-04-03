@@ -13,7 +13,7 @@ export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo(".contact-title", 
+    gsap.fromTo(".contact-title",
       { y: 50, opacity: 0 },
       {
 
@@ -52,7 +52,7 @@ export const Contact = () => {
 
 
 
-        
+
         scrollTrigger: {
           trigger: ".contact-title",
           start: "top 85%",
@@ -64,7 +64,7 @@ export const Contact = () => {
       }
     );
 
-    gsap.fromTo(".contact-card", 
+    gsap.fromTo(".contact-card",
       { x: -50, opacity: 0 },
       {
         scrollTrigger: {
@@ -78,7 +78,7 @@ export const Contact = () => {
       }
     );
 
-    gsap.fromTo(".social-card", 
+    gsap.fromTo(".social-card",
       { x: 50, opacity: 0 },
       {
         scrollTrigger: {
@@ -92,7 +92,7 @@ export const Contact = () => {
       }
     );
 
-    gsap.fromTo(".social-item", 
+    gsap.fromTo(".social-item",
       { scale: 0.5, opacity: 0 },
       {
         scrollTrigger: {
@@ -139,7 +139,7 @@ export const Contact = () => {
         </div>
 
         <div className="contact-grid grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="contact-card p-10 glass rounded-3xl border border-white/5 relative overflow-hidden group">
+          {/* <div className="contact-card p-10 glass rounded-3xl border border-white/5 relative overflow-hidden group">
             <div className="absolute -top-24 -left-24 w-48 h-48 bg-neon-cyan/10 blur-[100px] rounded-full group-hover:bg-neon-cyan/20 transition-all pointer-events-none"></div>
             
             <form ref={formRef} onSubmit={handleSubmit} className="relative z-10 flex flex-col gap-6">
@@ -184,9 +184,9 @@ export const Contact = () => {
                 {t.contact.form.submit} <LucideIcons.Send size={20} className="group-hover:translate-x-2 transition-transform" />
               </button>
             </form>
-          </div>
+          </div> */}
 
-          <div className="social-card flex flex-col justify-between py-6">
+          <div className="social-card flex flex-col justify-between py-6 rounded-3xl">
             <div>
               <h3 className="text-3xl font-heading font-bold mb-8 flex items-center gap-4">
                 {t.contact.collab.split(' ')[0]} <span className="neon-text-pink uppercase shrink-0">{t.contact.collab.split(' ').slice(1).join(' ')}</span>
@@ -195,31 +195,35 @@ export const Contact = () => {
                 {t.contact.collabText}
               </p>
 
-              <div className="grid grid-cols-2 gap-6 mb-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
                 {socials.map((social, idx) => {
                   const Icon = (LucideIcons as any)[social.icon] || LucideIcons.HelpCircle;
                   return (
                     <a
                       key={idx}
                       href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="social-item group p-6 glass rounded-2xl border border-white/5 hover:border-neon-pink hover:shadow-neon-pink transition-all duration-500 interactive"
                     >
                       <Icon className="text-text-muted group-hover:text-neon-pink transition-colors mb-4" size={32} />
                       <div className="text-xs font-bold uppercase tracking-widest text-text-muted group-hover:text-white">{social.platform}</div>
-                      <div className="text-xs text-text-muted truncate mt-1">@gonzalez.aquino</div>
+                      <div className="text-xs text-text-muted truncate mt-1">{social.handle}</div>
                     </a>
                   );
                 })}
               </div>
             </div>
-
-            <div className="p-8 border-l-2 border-neon-purple glass rounded-r-3xl">
-              <div className="text-xs font-bold uppercase tracking-widest text-text-muted mb-4 font-heading">Location</div>
-              <div className="text-lg md:text-2xl font-bold font-inter text-white">{t.contact.location}</div>
-            </div>
+          </div>
+          <div className="p-8 border-l-2 border-neon-purple glass rounded-r-3xl">
+            <div className="text-xs font-bold uppercase tracking-widest text-text-muted mb-4 font-heading">Location</div>
+            <div className="text-lg md:text-2xl font-bold font-inter text-white">{t.contact.location}</div>
+            < > <iframe className="rounded-2xl hover:border-neon-pink" src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1487119.5290063082!2d-70.50321309501592!3d18.946957290497355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8838def1b6f5%3A0xa6020f24060df7e0!2sRep%C3%BAblica%20Dominicana!5e0!3m2!1ses-419!2sdo!4v1775241880490!5m2!1ses-419!2sdo' width='600' height='450' loading='lazy' ></iframe>
+            </>
           </div>
         </div>
       </div>
-    </section>
+
+    </section >
   );
 };

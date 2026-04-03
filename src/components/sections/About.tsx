@@ -111,7 +111,7 @@ export const About = () => {
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
             <div className="absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-neon-cyan neon-border-cyan rounded-tl-xl transition-all duration-300 group-hover:scale-125"></div>

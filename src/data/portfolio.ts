@@ -20,6 +20,7 @@ export type Translation = {
     github: string;
     demo: string;
     category: string;
+    year: string;
   }[];
   testimonials: {
     name: string;
@@ -65,8 +66,8 @@ export const portfolioData: { [key: string]: Translation } = {
       bio: "Soy un Desarrollador Full Stack Senior, enfocado en la excelencia tecnológica mediante soluciones innovadoras, escalables y eficientes. Especializado en .NET Core y entornos web de alto rendimiento con foco en la eficacia organizacional.",
       stats: [
         { label: "Años de Exp.", value: 8 },
-        { label: "Proyectos Corporativos", value: 45 },
-        { label: "Casos de Éxito", value: 20 },
+        // { label: "Proyectos Corporativos", value: 45 },
+        // { label: "Casos de Éxito", value: 20 },
       ],
       values: [
         {
@@ -87,37 +88,50 @@ export const portfolioData: { [key: string]: Translation } = {
       ],
     },
     skills: {
-      frontend: ["React", "Next.js", "TypeScript", "JavaScript", ".net Maui", "Tailwind CSS"],
+      frontend: ["React", "Next.js", "TypeScript", "JavaScript", "Blazor", "xamarin form / Maui"],
       backend: [".NET Core", "C#", "SQL Server", "Web API", "Arquitectura Limpia"],
-      tools: ["Git & GitHub", "Azure DevOps"],
+      tools: ["Git & GitHub", "Azure DevOps", "Nunit"],
     },
     projects: [
       {
+        title: "Half Moon Games Studio",
+        description: "Estudio de desarrollo de videojuegos indie dominico-mexicano dedicado a la creación de experiencias digitales innovadoras y videojuegos impactantes.",
+        image: "/projects/hmstudios.png",
+        tags: ["Game Dev", "Indie", "Web"],
+        github: "#",
+        demo: "https://halfmoongamestudio.com/",
+        category: "Web",
+        year: "2025",
+      },
+      {
         title: "Movie Master",
         description: "Aplicación web que utiliza la API v3 de The Movie Database (TMDB) como fuente de datos para explorar y visualizar información de películas.",
-        image: "/proyects/moviedb.png",
+        image: "/projects/moviedb.png",
         tags: ["React", "API", "TMDB"],
         github: "https://github.com/MarioG108/",
         demo: "https://movieappmariog.netlify.app/#/",
         category: "Web",
+        year: "2019",
       },
       {
         title: "Mi TCRD",
         description: "Portal del Tribunal Constitucional de la República Dominicana para la inscripción de actividades, eventos, diplomados y congresos.",
-        image: "/proyects/mitcrdWeb.png",
+        image: "/projects/mitcrdWeb.png",
         tags: [".NET", "SQL Server", "Portal"],
         github: "#",
         demo: "https://mitcrd.gob.do/",
         category: "Web",
+        year: "2023",
       },
       {
         title: "Mi TCRD APP",
         description: "App del Tribunal Constitucional para inscripción a eventos, pago, registro y visualización de transmisiones en vivo.",
-        image: "/proyects/mitcrdapp.png",
+        image: "/projects/mitcrdapp.png",
         tags: ["Xamarin Forms", "Mobile", "Events", "News"],
         github: "#",
         demo: "https://play.google.com/store/apps/details?id=com.tribunalconstitucionaldr.mitcrd",
         category: "Mobile App",
+        year: "2024",
       },
       // {
       //   title: "Sistemas Operativos Ramos",
@@ -149,7 +163,8 @@ export const portfolioData: { [key: string]: Translation } = {
       },
       collab: "Vamos a colaborar",
       collabText: "Si tienes un desafío tecnológico o simplemente quieres saludar, mi bandeja de entrada está abierta.",
-      location: "Distrito Nacional, República Dominicana",
+      location: "Distrito Nacional, Dominicana",
+
     },
     nav: {
       home: "Inicio",
@@ -195,37 +210,50 @@ export const portfolioData: { [key: string]: Translation } = {
       ],
     },
     skills: {
-      frontend: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"],
+      frontend: ["React", "Next.js", "TypeScript", "JavaScript", "Blazor", "xamarin form / Maui"],
       backend: [".NET Core", "C#", "SQL Server", "Web API", "Clean Architecture"],
-      tools: ["Git & GitHub", "Azure DevOps", "Docker", "VS Code"],
+      tools: ["Git & GitHub", "Azure DevOps", "Nunit"],
     },
     projects: [
       {
+        title: "Half Moon Games Studio",
+        description: "Dominican-Mexican indie game development studio dedicated to creating innovative digital experiences and impactful video games.",
+        image: "/projects/hmstudios.png",
+        tags: ["c#", ".Net", "Web", "SQL"],
+        github: "#",
+        demo: "https://halfmoongamestudio.com/",
+        category: "Web",
+        year: "2025",
+      },
+      {
         title: "Movie Master",
         description: "Web application using The Movie Database (TMDB) API v3 as a data source to explore and visualize movie information.",
-        image: "/proyects/moviedb.png",
+        image: "/projects/moviedb.png",
         tags: ["React", "API", "TMDB"],
         github: "https://github.com/MarioG108/",
         demo: "https://movieappmariog.netlify.app/#/",
         category: "Web",
+        year: "2019",
       },
       {
         title: "Mi TCRD",
         description: "Portal of the Constitutional Court of the Dominican Republic for registration in activities, events, courses, and congresses.",
-        image: "/proyects/mitcrdWeb.png",
+        image: "/projects/mitcrdWeb.png",
         tags: [".NET", "SQL Server", "Portal"],
         github: "#",
         demo: "https://mitcrd.gob.do/",
         category: "Web",
+        year: "2023",
       },
       {
         title: "Mi TCRD APP",
         description: "Constitutional Court App for event registration, payment, recording, and viewing live streams.",
-        image: "/proyects/mitcrdapp.png",
+        image: "/projects/mitcrdapp.png",
         tags: ["Xamarin Forms", "Mobile", "Events", "News"],
         github: "#",
         demo: "https://play.google.com/store/apps/details?id=com.tribunalconstitucionaldr.mitcrd",
         category: "Mobile App",
+        year: "2024",
       },
       // {
       //   title: "Ramos Operating Systems",
@@ -258,6 +286,7 @@ export const portfolioData: { [key: string]: Translation } = {
       collab: "Let's Collaborate",
       collabText: "If you have a technological challenge or just want to say hi, my inbox is open.",
       location: "Distrito Nacional, Dominican Republic",
+
     },
     nav: {
       home: "Home",
@@ -276,8 +305,7 @@ export const portfolioData: { [key: string]: Translation } = {
 };
 
 export const socials = [
-  { platform: "GitHub", url: "https://github.com/MarioG108/", icon: "Github" },
-  { platform: "LinkedIn", url: "https://www.linkedin.com/in/mariog108/", icon: "Linkedin" },
-  { platform: "Twitter", url: "https://twitter.com", icon: "Twitter" },
-  { platform: "Email", url: "mailto:mario.gonzalez@example.com", icon: "Mail" },
+  { platform: "GitHub", url: "https://github.com/Mariog108", handle: "Mariog108", icon: "Code" },
+  { platform: "LinkedIn", url: "https://www.linkedin.com/in/Mariog108", handle: "Mariog108", icon: "Handshake" },
+  { platform: "Email", url: "mailto:mariogonzalezaquino@gmail.com", handle: "mariogonzalezaquino@gmail.com", icon: "Mail" },
 ];
