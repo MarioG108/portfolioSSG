@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --color-neon-cyan: #00fff7;
+  --color-neon-purple: #bf00ff;
+  --color-neon-pink: #ff0080;
+  --color-dark-bg: #0a0a0a;
+  --color-dark-card: #111111;
+  --color-text-primary: #e0e0e0;
+  --color-text-muted: #555566;
+
+  --shadow-neon-cyan: 0 0 10px #00fff7, 0 0 20px #00fff7;
+  --shadow-neon-purple: 0 0 10px #bf00ff, 0 0 20px #bf00ff;
+  --shadow-neon-pink: 0 0 10px #ff0080, 0 0 20px #ff0080;
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #e0e0e0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-orbitron);
+}
+
+/* Custom Neon Effects */
+.neon-text-cyan {
+  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
+  color: #00fff7;
+}
+
+.neon-border-cyan {
+  border-color: #00fff7;
+  box-shadow: 0 0 8px #00fff7;
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 5px #bf00ff, 0 0 10px #bf00ff;
+  color: #bf00ff;
+}
+
+.neon-border-purple {
+  border-color: #bf00ff;
+  box-shadow: 0 0 8px #bf00ff;
+}
+
+.neon-text-pink {
+  text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080;
+  color: #ff0080;
+}
+
+.neon-border-pink {
+  border-color: #ff0080;
+  box-shadow: 0 0 8px #ff0080;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Texture Overlays */
+.grid-overlay {
+  background-image: 
+    linear-gradient(rgba(0, 255, 247, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 247, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.2) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+}
+
+/* Cursor hidden by default on desktop if JS loads */
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+}
+
+/* Animated Gradient Background */
+.animated-bg {
+  background: linear-gradient(-45deg, #0a0a0a, #111111, #0a0a0a, #1a1a1a);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Magnetic Button Container */
+.magnetic {
+  display: inline-block;
+}
