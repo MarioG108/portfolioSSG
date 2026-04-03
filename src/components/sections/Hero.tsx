@@ -115,7 +115,7 @@ export const Hero = () => {
             <span className="absolute inset-0 bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity"></span>
           </Link>
           <Link href="/#contact" className="cta-btn px-8 py-4 border-2 border-neon-purple text-neon-purple font-bold font-heading rounded-sm hover:bg-neon-purple/10 hover:shadow-neon-purple transition-all interactive uppercase tracking-widest">
-            CV
+            {language === 'es-DO' ? 'Contactar' : 'Get in Touch'}
           </Link>
         </div>
       </div>
