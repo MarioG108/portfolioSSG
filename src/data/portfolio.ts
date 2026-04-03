@@ -181,15 +181,15 @@ export const portfolioData: { [key: string]: Translation } = {
     },
   },
   "en-US": {
-    name: "Mario Gonzalez Aquino",
+    name: "Mario Gonzalez",
     role: "Senior Full Stack Developer",
     typewriterRoles: [".NET Expert", "Senior Full Stack", "Software Architecture"],
     about: {
       bio: "I am a Senior Full Stack Developer, focused on technological excellence through innovative, scalable, and efficient solutions. Specialized in .NET Core and high-performance web environments with a focus on organizational efficiency.",
       stats: [
         { label: "Years of Exp.", value: 8 },
-        { label: "Corp. Projects", value: 45 },
-        { label: "Success Stories", value: 20 },
+        // { label: "Corp. Projects", value: 45 },
+        // { label: "Success Stories", value: 20 },
       ],
       values: [
         {

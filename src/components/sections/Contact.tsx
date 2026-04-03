@@ -206,7 +206,7 @@ export const Contact = () => {
                     >
                       <Icon className="text-text-muted group-hover:text-neon-pink transition-colors mb-4" size={32} />
                       <div className="text-xs font-bold uppercase tracking-widest text-text-muted group-hover:text-white">{social.platform}</div>
-                      <div className="text-xs text-text-muted truncate mt-1">@gonzalez.aquino</div>
+                      <div className="text-xs text-text-muted truncate mt-1">{social.handle}</div>
                     </a>
                   );
                 })}
