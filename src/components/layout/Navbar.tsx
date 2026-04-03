@@ -15,10 +15,10 @@ export const Navbar = () => {
   const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { name: t.nav.home, href: "#home" },
-    { name: t.nav.about, href: "#about" },
-    { name: t.nav.skills, href: "#skills" },
-    { name: t.nav.projects, href: "#projects" },
+    { name: t.nav.home, href: "/#home" },
+    { name: t.nav.about, href: "/#about" },
+    { name: t.nav.skills, href: "/#skills" },
+    { name: t.nav.projects, href: "/#projects" },
     { name: t.nav.contact, href: "#contact" },
   ];
 
@@ -71,14 +71,13 @@ export const Navbar = () => {
   return (
     <header
       ref={containerRef}
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
-        isScrolled ? "py-4 glass shadow-lg" : "py-8 bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${isScrolled ? "py-4 glass shadow-lg" : "py-8 bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="logo group">
           <span className="text-3xl font-heading font-bold neon-text-cyan tracking-tighter">
-            MG<span className="text-neon-pink text-4xl leading-none">.</span>
+            Mario-G<span className="text-neon-pink text-4xl leading-none">.</span>
           </span>
         </Link>
 
@@ -106,22 +105,22 @@ export const Navbar = () => {
           </button>
         </nav>
 
-        <button
-          className="md:hidden text-text-primary hover:neon-text-pink transition-colors interactive flex items-center gap-4"
-          onClick={() => setIsOpen(!isOpen)}
-        >
+        <div className="md:hidden flex items-center gap-4">
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setLanguage(language === "es-DO" ? "en-US" : "es-DO");
-            }}
-            className="flex md:hidden items-center gap-2 px-2 py-1 glass rounded-full border border-white/10"
+            onClick={() => setLanguage(language === "es-DO" ? "en-US" : "es-DO")}
+            className="flex items-center gap-2 px-2 py-1 glass rounded-full border border-white/10"
           >
             <Languages size={14} className="text-neon-cyan" />
             <span className="text-[10px] font-bold">{language === "es-DO" ? "EN" : "ES"}</span>
           </button>
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
-        </button>
+
+          <button
+            className="text-text-primary hover:neon-text-pink transition-colors interactive flex items-center"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={32} /> : <Menu size={32} />}
+          </button>
+        </div>
       </div>
 
       <div

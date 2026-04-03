@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useRef, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
 import { gsap, TextPlugin } from "@/lib/gsap";
@@ -15,13 +15,16 @@ export const Hero = () => {
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.from(".headline-word", {
-      y: 100,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 1,
-      delay: 1,
-    });
+    tl.fromTo(".headline-word",
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.1,
+        duration: 1,
+        delay: 0.5,
+      }
+    );
 
     const words = t.typewriterRoles;
     let wordIndex = 0;
@@ -58,11 +61,12 @@ export const Hero = () => {
       ease: "power1.inOut",
     });
 
-    tl.from(
+    tl.fromTo(
       ".cta-btn",
+      { y: 20, opacity: 0 },
       {
-        y: 20,
-        opacity: 0,
+        y: 0,
+        opacity: 1,
         stagger: 0.2,
         duration: 0.8,
       },
@@ -74,20 +78,20 @@ export const Hero = () => {
     <section
       id="home"
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden grid-overlay scanlines"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 -z-10 animated-bg opacity-30"></div>
+      <div className="absolute inset-0 -z-10 animated-bg opacity-30 grid-overlay scanlines pointer-events-none"></div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <h1
           ref={headlineRef}
-          className="text-5xl md:text-8xl font-heading font-black mb-6 tracking-tight overflow-hidden leading-tight"
+          className="text-5xl md:text-7xl font-heading font-black mb-6 tracking-tight overflow-hidden leading-tight"
         >
           <span className="headline-word inline-block mr-4">{language === 'es-DO' ? 'Hola,' : 'Hi,'}</span>
-          <span className="headline-word inline-block mr-4 text-white uppercase">{language === 'es-DO' ? 'Soy' : "I'm"}</span>
+          <span className="headline-word inline-block mr-4 text-white">{language === 'es-DO' ? 'Soy' : "I'm"}</span>
           <span className="headline-word inline-block neon-text-cyan">
             {t.name.split(" ").map((word: string, i: number) => (
-              <span key={i} className="inline-block mr-2 uppercase">
+              <span key={i} className="inline-block mr-2 ">
                 {word}
               </span>
             ))}
@@ -106,13 +110,13 @@ export const Hero = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-          <button className="cta-btn relative px-8 py-4 bg-neon-cyan text-dark-bg font-bold font-heading rounded-sm neon-border-cyan hover:scale-105 transition-transform interactive group uppercase tracking-widest">
+          <Link href="/#projects" className="cta-btn relative px-8 py-4 bg-neon-cyan text-dark-bg font-bold font-heading rounded-sm neon-border-cyan hover:scale-105 transition-transform interactive group uppercase tracking-widest">
             {language === 'es-DO' ? 'Ver Proyectos' : 'View Work'}
             <span className="absolute inset-0 bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </button>
-          <button className="cta-btn px-8 py-4 border-2 border-neon-purple text-neon-purple font-bold font-heading rounded-sm hover:bg-neon-purple/10 hover:shadow-neon-purple transition-all interactive uppercase tracking-widest">
+          </Link>
+          <Link href="/#contact" className="cta-btn px-8 py-4 border-2 border-neon-purple text-neon-purple font-bold font-heading rounded-sm hover:bg-neon-purple/10 hover:shadow-neon-purple transition-all interactive uppercase tracking-widest">
             CV
-          </button>
+          </Link>
         </div>
       </div>
 

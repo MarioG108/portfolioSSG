@@ -13,67 +13,79 @@ export const About = () => {
   const { t, language } = useLanguage();
 
   useGSAP(() => {
-    gsap.from(".about-title", {
-      scrollTrigger: {
-        trigger: ".about-title",
-        start: "top 80%",
-      },
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
+    gsap.fromTo(".about-title",
+      { y: 50, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".about-title",
+          start: "top 80%",
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+      }
+    );
 
-    gsap.from(".about-content", {
-      scrollTrigger: {
-        trigger: ".about-content",
-        start: "top 75%",
-      },
-      x: -50,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power3.out",
-    });
+    gsap.fromTo(".about-content",
+      { x: -50, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".about-content",
+          start: "top 75%",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+      }
+    );
 
-    gsap.from(".stat-item", {
-      scrollTrigger: {
-        trigger: statsRef.current,
-        start: "top 90%",
-      },
-      scale: 0.5,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.8,
-      ease: "back.out(1.7)",
-      onStart: () => {
-        const targets = document.querySelectorAll(".stat-number");
-        targets.forEach((target: any) => {
-          const endValue = parseInt(target.getAttribute("data-value") || "0");
-          const obj = { value: 0 };
-          gsap.to(obj, {
-            value: endValue,
-            duration: 2,
-            ease: "power2.out",
-            onUpdate: () => {
-              target.innerHTML = Math.floor(obj.value).toString();
-            },
+    gsap.fromTo(".stat-item",
+      { scale: 0.5, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: statsRef.current,
+          start: "top 90%",
+        },
+        scale: 1,
+        opacity: 1,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+        onStart: () => {
+          const targets = document.querySelectorAll(".stat-number");
+          targets.forEach((target: any) => {
+            const endValue = parseInt(target.getAttribute("data-value") || "0");
+            const obj = { value: 0 };
+            gsap.to(obj, {
+              value: endValue,
+              duration: 2,
+              ease: "power2.out",
+              onUpdate: () => {
+                target.innerHTML = Math.floor(obj.value).toString();
+              },
+            });
           });
-        });
-      },
-    });
+        },
+      }
+    );
 
-    gsap.from(".value-card", {
-      scrollTrigger: {
-        trigger: ".value-card-container",
-        start: "top 80%",
-      },
-      y: 100,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 1,
-      ease: "power3.out",
-    });
+    gsap.fromTo(".value-card",
+      { y: 100, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".value-card-container",
+          start: "top 80%",
+        },
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power3.out",
+      }
+    );
   }, { scope: sectionRef, dependencies: [language] });
 
   return (
@@ -97,7 +109,9 @@ export const About = () => {
                 alt={t.name}
                 fill
                 priority
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
             <div className="absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-neon-cyan neon-border-cyan rounded-tl-xl transition-all duration-300 group-hover:scale-125"></div>

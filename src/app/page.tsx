@@ -7,7 +7,7 @@ import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
 import { useRef } from "react";
 import { useGSAP } from "@/hooks/useGSAP";
-import { gsap } from "@/lib/gsap";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Home() {
@@ -15,6 +15,9 @@ export default function Home() {
   const { t, language } = useLanguage();
 
   useGSAP(() => {
+    // Refresh ScrollTrigger to ensure all markers and triggers are correctly positioned
+    ScrollTrigger.refresh();
+
     const anchors = document.querySelectorAll('a[href^="#"]');
     anchors.forEach(anchor => {
       anchor.addEventListener('click', (e) => {
@@ -36,12 +39,12 @@ export default function Home() {
   }, { scope: containerRef, dependencies: [language] });
 
   return (
-    <div ref={containerRef} className="bg-dark-bg selection:bg-neon-cyan/20 selection:text-neon-cyan">
+    <>
       <Hero />
       <About />
       <Skills />
       <Projects />
-      
+
       {/* Testimonials */}
       <section className="py-24 bg-dark-bg/50 border-y border-white/5 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-neon-purple/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -52,7 +55,7 @@ export default function Home() {
             </h2>
             <div className="w-20 h-1 bg-neon-purple mx-auto"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {t.testimonials.map((test: any, idx: number) => (
               <div
@@ -79,6 +82,6 @@ export default function Home() {
       </section>
 
       <Contact />
-    </div>
+    </>
   );
 }

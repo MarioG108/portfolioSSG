@@ -15,13 +15,13 @@ export const Footer = () => {
   return (
     <footer className="py-20 bg-dark-bg relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-50 shadow-neon-cyan"></div>
-      
+
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left mb-16">
           <div className="flex flex-col gap-4">
             <Link href="/" className="group flex justify-center md:justify-start">
               <span className="text-3xl font-heading font-black neon-text-cyan tracking-tighter">
-                MG<span className="text-neon-pink">.</span>
+                Mario-G<span className="text-neon-pink">.</span>
               </span>
             </Link>
             <p className="text-text-muted text-sm max-w-xs mx-auto md:mx-0">

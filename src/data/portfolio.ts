@@ -62,7 +62,7 @@ export const portfolioData: { [key: string]: Translation } = {
     role: "Desarrollador Senior Full Stack",
     typewriterRoles: [".NET Expert", "Mobile Developer", "Full Stack Senior", "Software Architecture"],
     about: {
-      bio: "Soy un Desarrollador Full Stack Senior en Grupo Ramos, enfocado en la excelencia tecnológica mediante soluciones innovadoras, escalables y eficientes. Especializado en .NET Core y entornos web de alto rendimiento con foco en la eficacia organizacional.",
+      bio: "Soy un Desarrollador Full Stack Senior, enfocado en la excelencia tecnológica mediante soluciones innovadoras, escalables y eficientes. Especializado en .NET Core y entornos web de alto rendimiento con foco en la eficacia organizacional.",
       stats: [
         { label: "Años de Exp.", value: 8 },
         { label: "Proyectos Corporativos", value: 45 },
@@ -93,23 +93,41 @@ export const portfolioData: { [key: string]: Translation } = {
     },
     projects: [
       {
-        title: "Sistemas Operativos Ramos",
-        description: "Optimización de procesos internos para una de las empresas retail más grandes de RD.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1426&auto=format&fit=crop",
-        tags: [".NET", "SQL Server", "Architecture"],
-        github: "#",
-        demo: "#",
+        title: "Movie Master",
+        description: "Aplicación web que utiliza la API v3 de The Movie Database (TMDB) como fuente de datos para explorar y visualizar información de películas.",
+        image: "/proyects/moviedb.png",
+        tags: ["React", "API", "TMDB"],
+        github: "https://github.com/MarioG108/",
+        demo: "https://movieappmariog.netlify.app/#/",
         category: "Web",
       },
       {
-        title: "Arquitectura de Microservicios",
-        description: "Implementación de patrones de diseño modernos para escalabilidad masiva.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=1631&auto=format&fit=crop",
-        tags: [".NET Core", "Docker", "DDD"],
+        title: "Mi TCRD",
+        description: "Portal del Tribunal Constitucional de la República Dominicana para la inscripción de actividades, eventos, diplomados y congresos.",
+        image: "/proyects/mitcrdWeb.png",
+        tags: [".NET", "SQL Server", "Portal"],
         github: "#",
-        demo: "#",
-        category: "App",
+        demo: "https://mitcrd.gob.do/",
+        category: "Web",
       },
+      {
+        title: "Mi TCRD APP",
+        description: "App del Tribunal Constitucional para inscripción a eventos, pago, registro y visualización de transmisiones en vivo.",
+        image: "/proyects/mitcrdapp.png",
+        tags: ["Xamarin Forms", "Mobile", "Events", "News"],
+        github: "#",
+        demo: "https://play.google.com/store/apps/details?id=com.tribunalconstitucionaldr.mitcrd",
+        category: "Mobile App",
+      },
+      // {
+      //   title: "Sistemas Operativos Ramos",
+      //   description: "Optimización de procesos internos para una de las empresas retail más grandes de RD.",
+      //   image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1426&auto=format&fit=crop",
+      //   tags: [".NET", "SQL Server", "Architecture"],
+      //   github: "#",
+      //   demo: "#",
+      //   category: "Web",
+      // },
     ],
     testimonials: [
       {
@@ -152,7 +170,7 @@ export const portfolioData: { [key: string]: Translation } = {
     role: "Senior Full Stack Developer",
     typewriterRoles: [".NET Expert", "Senior Full Stack", "Software Architecture"],
     about: {
-      bio: "I am a Senior Full Stack Developer at Grupo Ramos, focused on technological excellence through innovative, scalable, and efficient solutions. Specialized in .NET Core and high-performance web environments with a focus on organizational efficiency.",
+      bio: "I am a Senior Full Stack Developer, focused on technological excellence through innovative, scalable, and efficient solutions. Specialized in .NET Core and high-performance web environments with a focus on organizational efficiency.",
       stats: [
         { label: "Years of Exp.", value: 8 },
         { label: "Corp. Projects", value: 45 },
@@ -183,23 +201,41 @@ export const portfolioData: { [key: string]: Translation } = {
     },
     projects: [
       {
-        title: "Ramos Operating Systems",
-        description: "Internal process optimization for one of the largest retail companies in DR.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1426&auto=format&fit=crop",
-        tags: [".NET", "SQL Server", "Architecture"],
-        github: "#",
-        demo: "#",
+        title: "Movie Master",
+        description: "Web application using The Movie Database (TMDB) API v3 as a data source to explore and visualize movie information.",
+        image: "/proyects/moviedb.png",
+        tags: ["React", "API", "TMDB"],
+        github: "https://github.com/MarioG108/",
+        demo: "https://movieappmariog.netlify.app/#/",
         category: "Web",
       },
       {
-        title: "Microservices Architecture",
-        description: "Implementing modern design patterns for massive scalability.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=1631&auto=format&fit=crop",
-        tags: [".NET Core", "Docker", "DDD"],
+        title: "Mi TCRD",
+        description: "Portal of the Constitutional Court of the Dominican Republic for registration in activities, events, courses, and congresses.",
+        image: "/proyects/mitcrdWeb.png",
+        tags: [".NET", "SQL Server", "Portal"],
         github: "#",
-        demo: "#",
-        category: "App",
+        demo: "https://mitcrd.gob.do/",
+        category: "Web",
       },
+      {
+        title: "Mi TCRD APP",
+        description: "Constitutional Court App for event registration, payment, recording, and viewing live streams.",
+        image: "/proyects/mitcrdapp.png",
+        tags: ["Xamarin Forms", "Mobile", "Events", "News"],
+        github: "#",
+        demo: "https://play.google.com/store/apps/details?id=com.tribunalconstitucionaldr.mitcrd",
+        category: "Mobile App",
+      },
+      // {
+      //   title: "Ramos Operating Systems",
+      //   description: "Internal process optimization for one of the largest retail companies in DR.",
+      //   image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1426&auto=format&fit=crop",
+      //   tags: [".NET", "SQL Server", "Architecture"],
+      //   github: "#",
+      //   demo: "#",
+      //   category: "Web",
+      // },
     ],
     testimonials: [
       {
@@ -240,8 +276,8 @@ export const portfolioData: { [key: string]: Translation } = {
 };
 
 export const socials = [
-  { platform: "GitHub", url: "https://github.com", icon: "Github" },
-  { platform: "LinkedIn", url: "https://linkedin.com", icon: "Linkedin" },
+  { platform: "GitHub", url: "https://github.com/MarioG108/", icon: "Github" },
+  { platform: "LinkedIn", url: "https://www.linkedin.com/in/mariog108/", icon: "Linkedin" },
   { platform: "Twitter", url: "https://twitter.com", icon: "Twitter" },
-  { platform: "Email", url: "mailto:mario@example.com", icon: "Mail" },
+  { platform: "Email", url: "mailto:mario.gonzalez@example.com", icon: "Mail" },
 ];

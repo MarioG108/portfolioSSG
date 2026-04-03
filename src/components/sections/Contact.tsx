@@ -13,50 +13,100 @@ export const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   useGSAP(() => {
-    gsap.from(".contact-title", {
-      scrollTrigger: {
-        trigger: ".contact-title",
-        start: "top 85%",
-      },
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
+    gsap.fromTo(".contact-title", 
+      { y: 50, opacity: 0 },
+      {
 
-    gsap.from(".contact-card", {
-      scrollTrigger: {
-        trigger: ".contact-grid",
-        start: "top 70%",
-      },
-      x: -50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
 
-    gsap.from(".social-card", {
-      scrollTrigger: {
-        trigger: ".contact-grid",
-        start: "top 70%",
-      },
-      x: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
 
-    gsap.from(".social-item", {
-      scrollTrigger: {
-        trigger: ".social-card",
-        start: "top 80%",
-      },
-      scale: 0.5,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.8,
-      ease: "back.out(1.7)",
-    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        scrollTrigger: {
+          trigger: ".contact-title",
+          start: "top 85%",
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+      }
+    );
+
+    gsap.fromTo(".contact-card", 
+      { x: -50, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".contact-grid",
+          start: "top 70%",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+      }
+    );
+
+    gsap.fromTo(".social-card", 
+      { x: 50, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".contact-grid",
+          start: "top 70%",
+        },
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+      }
+    );
+
+    gsap.fromTo(".social-item", 
+      { scale: 0.5, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".social-card",
+          start: "top 80%",
+        },
+        scale: 1,
+        opacity: 1,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+      }
+    );
+
 
     const inputs = document.querySelectorAll("input, textarea");
     inputs.forEach((input) => {

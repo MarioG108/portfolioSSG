@@ -11,37 +11,43 @@ export const Projects = () => {
   const [filter, setFilter] = useState("All");
   const containerRef = useRef<HTMLElement>(null);
   const { t, language } = useLanguage();
-  
-  const projects = t.projects;
-  const categories = language === 'es-DO' ? ["All", "Web", "App", "Design"] : ["All", "Web", "App", "Design"];
 
-  const filteredProjects = filter === "All" 
-    ? projects 
+  const projects = t.projects;
+  const categories = language === 'es-DO' ? ["All", "Web", "Mobile App"] : ["All", "Web", "Mobile App"];
+
+  const filteredProjects = filter === "All"
+    ? projects
     : projects.filter((p: any) => p.category === filter);
 
   useGSAP(() => {
-    gsap.from(".projects-title", {
-      scrollTrigger: {
-        trigger: ".projects-title",
-        start: "top 85%",
-      },
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
+    gsap.fromTo(".projects-title",
+      { y: 50, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".projects-title",
+          start: "top 85%",
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+      }
+    );
 
-    gsap.from(".project-card", {
-      scrollTrigger: {
-        trigger: ".project-grid",
-        start: "top 70%",
-      },
-      scale: 0.9,
-      opacity: 0,
-      stagger: 0.15,
-      duration: 1,
-      ease: "power2.out",
-    });
+    gsap.fromTo(".project-card",
+      { scale: 0.9, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".project-grid",
+          start: "top 70%",
+        },
+        scale: 1,
+        opacity: 1,
+        stagger: 0.15,
+        duration: 1,
+        ease: "power2.out",
+      }
+    );
   }, { scope: containerRef, dependencies: [language, filter] });
 
   return (
@@ -61,11 +67,10 @@ export const Projects = () => {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-8 py-2 rounded-full border-2 font-bold font-heading uppercase tracking-widest text-sm transition-all duration-300 interactive ${
-                filter === cat
-                  ? "bg-neon-pink text-white border-neon-pink shadow-neon-pink"
-                  : "border-text-muted text-text-muted hover:border-pink-500/50"
-              }`}
+              className={`px-8 py-2 rounded-full border-2 font-bold font-heading uppercase tracking-widest text-sm transition-all duration-300 interactive ${filter === cat
+                ? "bg-neon-pink text-white border-neon-pink shadow-neon-pink"
+                : "border-text-muted text-text-muted hover:border-pink-500/50"
+                }`}
             >
               {cat}
             </button>
@@ -89,7 +94,7 @@ export const Projects = () => {
               </div>
 
               <div className="relative h-full flex flex-col justify-end p-8 z-10">
-                <div className="transform group-hover:-translate-y-4 transition-transform duration-500 flex flex-col gap-4">
+                <div className="transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 flex flex-col gap-4">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag: string, tIdx: number) => (
                       <span
@@ -104,12 +109,12 @@ export const Projects = () => {
                   <h3 className="text-3xl font-heading font-black text-white group-hover:neon-text-pink transition-all">
                     {project.title}
                   </h3>
-                  
-                  <p className="text-text-primary text-sm line-clamp-2 max-w-sm">
+
+                  <p className="text-text-primary text-sm line-clamp-2 max-w-sm opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                     {project.description}
                   </p>
 
-                  <div className="flex gap-6 mt-4">
+                  <div className="flex gap-6 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
                     <a
                       href={project.github}
                       target="_blank"

@@ -10,40 +10,49 @@ export const Skills = () => {
   const { t, language } = useLanguage();
 
   useGSAP(() => {
-    gsap.from(".skills-title", {
-      scrollTrigger: {
-        trigger: ".skills-title",
-        start: "top 85%",
-      },
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
+    gsap.fromTo(".skills-title", 
+      { y: 50, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".skills-title",
+          start: "top 85%",
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+      }
+    );
 
-    gsap.from(".skill-category", {
-      scrollTrigger: {
-        trigger: ".skill-grid",
-        start: "top 70%",
-      },
-      y: 100,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 1.2,
-      ease: "power3.out",
-    });
+    gsap.fromTo(".skill-category", 
+      { y: 100, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".skill-grid",
+          start: "top 70%",
+        },
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1.2,
+        ease: "power3.out",
+      }
+    );
 
-    gsap.from(".skill-item", {
-      scrollTrigger: {
-        trigger: ".skill-grid",
-        start: "top 60%",
-      },
-      x: -20,
-      opacity: 0,
-      stagger: 0.05,
-      duration: 0.5,
-      ease: "power2.out",
-    });
+    gsap.fromTo(".skill-item", 
+      { x: -20, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: ".skill-grid",
+          start: "top 60%",
+        },
+        x: 0,
+        opacity: 1,
+        stagger: 0.05,
+        duration: 0.5,
+        ease: "power2.out",
+      }
+    );
   }, { scope: containerRef, dependencies: [language] });
 
   const categories = [
