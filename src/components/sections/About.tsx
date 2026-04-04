@@ -101,11 +101,11 @@ export const About = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-          <div className="about-content relative group mx-auto lg:mx-0 max-w-sm lg:max-w-none">
+          <div className="about-content relative group mx-auto lg:mx-0 w-full max-w-sm lg:max-w-none">
             <div className="absolute -inset-2 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink rounded-2xl opacity-20 group-hover:opacity-100 transition-opacity blur-xl"></div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-neon-purple shadow-neon-purple shadow-inner">
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden border-2 border-neon-purple shadow-neon-purple shadow-inner">
               <Image
-                src="/pp.jpg"
+                src="/pp.png"
                 alt={t.name}
                 fill
                 priority
