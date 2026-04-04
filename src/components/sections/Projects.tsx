@@ -12,6 +12,8 @@ export const Projects = () => {
   const containerRef = useRef<HTMLElement>(null);
   const { t, language } = useLanguage();
 
+  const [activeProjectId, setActiveProjectId] = useState<number | null>(null);
+
   const projects = [...t.projects].sort((a: any, b: any) => parseInt(b.year) - parseInt(a.year));
   const categories = language === 'es-DO' ? ["All", "Web", "Mobile App"] : ["All", "Web", "Mobile App"];
 
@@ -81,17 +83,18 @@ export const Projects = () => {
           {filteredProjects.map((project: any, idx: number) => (
             <div
               key={idx}
-              className="project-card group relative aspect-video rounded-3xl overflow-hidden glass border-white/5 hover:border-pink-500 transition-all duration-500 interactive"
+              onClick={() => setActiveProjectId(activeProjectId === idx ? null : idx)}
+              className={`project-card group relative aspect-[4/5] md:aspect-video rounded-3xl overflow-hidden glass border-white/5 hover:border-pink-500 transition-all duration-500 interactive cursor-pointer ${activeProjectId === idx ? "border-neon-pink shadow-neon-pink" : ""}`}
             >
-              <div className="absolute inset-0 z-0 group-hover:blur-sm">
+              <div className={`absolute inset-0 z-0 transition-all duration-500 ${activeProjectId === idx ? "blur-sm" : "group-hover:blur-sm"}`}>
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   loading="lazy"
-                  className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                  className={`object-cover transition-transform duration-1000 ${activeProjectId === idx ? "scale-110" : "group-hover:scale-110"}`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                <div className={`absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent transition-opacity ${activeProjectId === idx ? "opacity-90" : "opacity-60 group-hover:opacity-80"}`}></div>
               </div>
 
               <div className="absolute top-6 right-6 z-20 px-4 py-1.5 bg-dark-bg/40 backdrop-blur-md border border-white/10 rounded-full text-[10px] font-heading font-black text-white/70 uppercase tracking-widest shadow-lg">
@@ -99,21 +102,22 @@ export const Projects = () => {
               </div>
 
               <div className="relative h-full flex flex-col justify-end p-8 z-10">
-                <div className="transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 flex flex-col gap-4 ">
+                <div className={`transform transition-transform duration-500 flex flex-col gap-4 ${activeProjectId === idx ? "translate-y-0" : "translate-y-12 group-hover:translate-y-0"}`}>
 
-                  <h3 className="text-3xl font-heading font-black text-white group-hover:neon-text-pink transition-all">
+                  <h3 className={`text-2xl md:text-3xl font-heading font-black text-white transition-all ${activeProjectId === idx ? "neon-text-pink opacity-100" : "group-hover:neon-text-pink opacity-0 group-hover:opacity-100"}`}>
                     {project.title}
                   </h3>
 
-                  <p className="text-text-primary text-sm line-clamp-2 max-w-sm opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                  <p className={`text-text-primary text-xs md:text-sm line-clamp-4 md:line-clamp-2 max-w-sm transition-all duration-500 delay-100 ${activeProjectId === idx ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
                     {project.description}
                   </p>
 
-                  <div className="flex gap-6 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+                  <div className={`flex gap-6 mb-4 transition-all duration-500 delay-200 ${activeProjectId === idx ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
                     {project.github !== "#" && (
                       <a
                         href={project.github}
                         target="_blank"
+                        onClick={(e) => e.stopPropagation()}
                         className="text-text-primary hover:neon-text-cyan transition-all interactive flex items-center gap-2 group/link"
                       >
                         <GitHub size={20} />
@@ -124,6 +128,7 @@ export const Projects = () => {
                       <a
                         href={project.demo}
                         target="_blank"
+                        onClick={(e) => e.stopPropagation()}
                         className="text-text-primary hover:neon-text-cyan transition-all interactive flex items-center gap-2 group/link"
                       >
                         <ExternalLink size={20} />
@@ -146,7 +151,7 @@ export const Projects = () => {
               </div>
 
 
-              <div className="absolute inset-0 bg-neon-pink/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+              <div className={`absolute inset-0 bg-neon-pink/10 transition-opacity pointer-events-none ${activeProjectId === idx ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}></div>
             </div>
           ))}
         </div>
