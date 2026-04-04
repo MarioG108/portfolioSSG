@@ -126,7 +126,7 @@ export const portfolioData: { [key: string]: Translation } = {
       {
         title: "Mi TCRD APP",
         description: "App del Tribunal Constitucional para inscripción a eventos, pago, registro y visualización de transmisiones en vivo.",
-        image: "/projects/mitcrdapp.png",
+        image: "/projects/mitcrdApp.png",
         tags: ["Xamarin Forms", "Mobile", "Events", "News"],
         github: "#",
         demo: "https://play.google.com/store/apps/details?id=com.tribunalconstitucionaldr.mitcrd",
@@ -248,7 +248,7 @@ export const portfolioData: { [key: string]: Translation } = {
       {
         title: "Mi TCRD APP",
         description: "Constitutional Court App for event registration, payment, recording, and viewing live streams.",
-        image: "/projects/mitcrdapp.png",
+        image: "/projects/mitcrdApp.png",
         tags: ["Xamarin Forms", "Mobile", "Events", "News"],
         github: "#",
         demo: "https://play.google.com/store/apps/details?id=com.tribunalconstitucionaldr.mitcrd",
