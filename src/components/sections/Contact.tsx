@@ -213,11 +213,17 @@ export const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="p-8 border-l-2 border-neon-purple glass rounded-r-3xl">
+          <div className="p-2 border-l-2 border-neon-purple glass rounded-r-3xl">
             <div className="text-xs font-bold uppercase tracking-widest text-text-muted mb-4 font-heading">Location</div>
             <div className="text-lg md:text-2xl font-bold font-inter text-white">{t.contact.location}</div>
-            < > <iframe className="rounded-2xl hover:border-neon-pink" src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1487119.5290063082!2d-70.50321309501592!3d18.946957290497355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8838def1b6f5%3A0xa6020f24060df7e0!2sRep%C3%BAblica%20Dominicana!5e0!3m2!1ses-419!2sdo!4v1775241880490!5m2!1ses-419!2sdo' width='600' height='450' loading='lazy' ></iframe>
-            </>
+            <div className="mt-8 w-full aspect-video md:aspect-square overflow-hidden rounded-2xl border border-white/10 hover:border-neon-pink transition-all">
+              <iframe
+                className="w-full h-full"
+                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1487119.5290063082!2d-70.50321309501592!3d18.946957290497355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8838def1b6f5%3A0xa6020f24060df7e0!2sRep%C3%BAblica%20Dominicana!5e0!3m2!1ses-419!2sdo!4v1775241880490!5m2!1ses-419!2sdo'
+                loading='lazy'
+                style={{ border: 0 }}
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
