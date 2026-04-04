@@ -137,7 +137,7 @@ export const Projects = () => {
                   {project.tags.map((tag: string, tIdx: number) => (
                     <span
                       key={tIdx}
-                      className="px-2 py-1 bg-neon-pink/20 text-neon-pink border border-neon-pink/30 rounded-full text-[10px] font-bold uppercase tracking-widest font-heading shadow-neon-pink"
+                      className="px-2 py-1 bg-neon-pink/20 text-xs border border-neon-pink/30 rounded-full text-[10px] font-bold uppercase tracking-widest font-heading shadow-neon-pink"
                     >
                       {tag}
                     </span>
