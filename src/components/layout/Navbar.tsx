@@ -75,7 +75,7 @@ export const Navbar = () => {
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="logo group">
+        <Link href="#home" className="logo group">
           <span className="text-3xl font-heading font-bold neon-text-cyan tracking-tighter">
             Mario-G<span className="text-neon-pink text-4xl leading-none">.</span>
           </span>

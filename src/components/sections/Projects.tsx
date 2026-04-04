@@ -88,6 +88,7 @@ export const Projects = () => {
                   src={project.image}
                   alt={project.title}
                   fill
+                  loading="lazy"
                   className="object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>

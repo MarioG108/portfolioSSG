@@ -64,19 +64,19 @@ export const Contact = () => {
       }
     );
 
-    gsap.fromTo(".contact-card",
-      { x: -50, opacity: 0 },
-      {
-        scrollTrigger: {
-          trigger: ".contact-grid",
-          start: "top 70%",
-        },
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out",
-      }
-    );
+    // gsap.fromTo(".contact-card",
+    //   { x: -50, opacity: 0 },
+    //   {
+    //     scrollTrigger: {
+    //       trigger: ".contact-grid",
+    //       start: "top 70%",
+    //     },
+    //     x: 0,
+    //     opacity: 1,
+    //     duration: 1,
+    //     ease: "power3.out",
+    //   }
+    // );
 
     gsap.fromTo(".social-card",
       { x: 50, opacity: 0 },
