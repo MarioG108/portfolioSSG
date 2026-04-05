@@ -13,18 +13,18 @@ export const Hero = () => {
   const { t, language } = useLanguage();
 
   useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    // const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.fromTo(".headline-word",
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        duration: 1,
-        delay: 0.5,
-      }
-    );
+    // tl.fromTo(".headline-word",
+    //   { y: 100, opacity: 0 },
+    //   {
+    //     y: 0,
+    //     opacity: 1,
+    //     stagger: 0.1,
+    //     duration: 1,
+    //     delay: 0.5,
+    //   }
+    // );
 
     const words = t.typewriterRoles;
     let wordIndex = 0;
@@ -45,13 +45,13 @@ export const Hero = () => {
     };
     typewriterLoop();
 
-    gsap.to(".neon-text-cyan", {
-      textShadow: "0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 40px #00fff7",
-      repeat: -1,
-      yoyo: true,
-      duration: 2,
-      ease: "sine.inOut",
-    });
+    // gsap.to(".neon-text-cyan", {
+    //   textShadow: "0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 40px #00fff7",
+    //   repeat: -1,
+    //   yoyo: true,
+    //   duration: 2,
+    //   ease: "sine.inOut",
+    // });
 
     gsap.to(".scroll-indicator", {
       y: 10,
@@ -61,17 +61,17 @@ export const Hero = () => {
       ease: "power1.inOut",
     });
 
-    tl.fromTo(
-      ".cta-btn",
-      { y: 20, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.2,
-        duration: 0.8,
-      },
-      "-=0.5"
-    );
+    // tl.fromTo(
+    //   ".cta-btn",
+    //   { y: 20, opacity: 0 },
+    //   {
+    //     y: 0,
+    //     opacity: 1,
+    //     stagger: 0.2,
+    //     duration: 0.8,
+    //   },
+    //   "-=0.5"
+    // );
   }, { scope: sectionRef, dependencies: [language] });
 
   return (

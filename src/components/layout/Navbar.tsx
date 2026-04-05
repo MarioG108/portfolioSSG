@@ -99,7 +99,7 @@ export const Navbar = () => {
           >
             <Languages size={16} className="text-neon-cyan" />
             <span className="text-xs font-bold font-heading uppercase italic">
-              {language === "es-DO" ? "EN" : "ES"}
+              {language === "es-DO" ? "ES" : "EN"}
             </span>
           </button>
         </nav>

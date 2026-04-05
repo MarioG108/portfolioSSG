@@ -108,9 +108,9 @@ export const About = () => {
                 src="/pp.png"
                 alt={t.name}
                 fill
-                priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-
+                loading="lazy"
+                quality={50}
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
@@ -119,7 +119,7 @@ export const About = () => {
           </div>
 
           <div className="about-content">
-            <p className="text-xl text-text-primary leading-relaxed mb-10 font-light first-letter:text-5xl first-letter:text-neon-cyan first-letter:font-heading first-letter:mr-2">
+            <p className="text-xl text-text-primary leading-relaxed mb-10 font-light first-letter:text-5xl first-letter:text-neon-cyan first-letter:font-heading first-letter:mr-1">
               {t.about.bio}
             </p>
 

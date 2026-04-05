@@ -188,7 +188,7 @@ export const Contact = () => {
 
           <div className="social-card flex flex-col justify-between py-6 rounded-3xl">
             <div>
-              <h3 className="text-3xl font-heading font-bold mb-8 flex items-center gap-4">
+              <h3 className="justify-center text-3xl md:text-2xl font-heading font-bold mb-8 flex items-center gap-4">
                 {t.contact.collab.split(' ')[0]} <span className="neon-text-pink uppercase shrink-0">{t.contact.collab.split(' ').slice(1).join(' ')}</span>
               </h3>
               <p className="text-xl text-text-muted mb-12 font-light leading-relaxed">
