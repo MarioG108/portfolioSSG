@@ -18,15 +18,10 @@ const orbitron = Orbitron({
 export const metadata: Metadata = {
   title: "Mario G. | Expert Developer",
   description: "Modern dark neon portfolio of Mario G., a professional .NET, Next.js, UI/UX design.",
-  metadataBase: new URL("https://mario-g.com"),
+  metadataBase: new URL("https://www.mariogonz.com"),
   icons: {
     icon: "/m-logo.png",
-    shortcut: "/m-logo.png",
     apple: "/m-logo.png",
-    other: {
-      rel: "icon",
-      url: "/m-logo.png",
-    },
   },
   openGraph: {
     title: "Mario G. | Expert Developer",

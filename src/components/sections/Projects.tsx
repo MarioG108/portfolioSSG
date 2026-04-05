@@ -92,6 +92,7 @@ export const Projects = () => {
                   alt={project.title}
                   fill
                   loading="lazy"
+                  quality={75}
                   className={`object-cover transition-transform duration-1000 ${activeProjectId === idx ? "scale-110" : "group-hover:scale-110"}`}
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent transition-opacity ${activeProjectId === idx ? "opacity-90" : "opacity-60 group-hover:opacity-80"}`}></div>
